@@ -25,7 +25,7 @@ class m171209_080239_create_admin_user_table extends Migration
         $this->insert("admin_user", [
             "name" => "Admin",
             "login"=> "login",
-            "pass" => md5("password")
+            "pass" => Yii::$app->getSecurity()->generatePasswordHash("password")
         ]);
     }
 
